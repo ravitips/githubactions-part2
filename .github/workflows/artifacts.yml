@@ -20,6 +20,7 @@ jobs:
           path: hello.txt
           
   shell-artifacts-download:
+    needs: shell-artifacts-upload
     runs-on: ubuntu-latest
     
     steps:
