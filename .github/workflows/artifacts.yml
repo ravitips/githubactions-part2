@@ -1,0 +1,15 @@
+name: Artifact Workflow
+on: workflow_dispatch
+jobs:
+    shell-artifacts-produce :
+        runs-on: ubuntu-latest
+        steps:
+          - name: Get Code
+            uses: actions/checkout@v3
+          - name: Run Code to get artifacts
+            run: echo "Hello, World!" > hello.txt
+          - name: Upload Artifacts
+            uses: actions/upload-artifact@v3
+            with:
+               name: artifacts-shell
+               path: hello.txt
