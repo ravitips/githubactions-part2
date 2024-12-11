@@ -16,7 +16,8 @@ jobs:
         run: |
           echo "Running a date command..."
           MY_OUTPUT=$(date) # Example command to get the current date and time
-          echo "my_output=$MY_OUTPUT" >> $GITHUB_ENV
+          #echo "my_output=$MY_OUTPUT" >> $GITHUB_ENV
+          echo "::set-output name=my_output::$MY_OUTPUT"
 
   second_job:
     runs-on: ubuntu-latest
